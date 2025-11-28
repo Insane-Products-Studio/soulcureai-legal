@@ -1,50 +1,196 @@
-# SoulCue AI – Support & Contact
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoulCue AI – Support & Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Support and contact information for SoulCue AI – an AI-powered relationship coach."
+  />
+  <style>
+    :root {
+      --bg: #f7f5fb;
+      --card-bg: #ffffff;
+      --text: #1f1f2e;
+      --accent: #7a5cff;
+      --accent-soft: rgba(122, 92, 255, 0.08);
+      --border: #e2deef;
+    }
 
-Welcome to **SoulCue AI**, your AI-powered relationship coach.
+    * {
+      box-sizing: border-box;
+    }
 
-SoulCue AI helps you:
-- reflect on difficult conversations,
-- understand patterns in your relationships,
-- practice safer, kinder messages before you send them,
-- build healthier communication habits over time.
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
 
-If you have any questions, issues, or feedback, we’d love to hear from you.
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
 
----
+    .container {
+      width: 100%;
+      max-width: 720px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 28px 22px 32px;
+      box-shadow: 0 16px 40px rgba(15, 14, 34, 0.06);
+      border: 1px solid var(--border);
+    }
 
-## How to contact support
+    header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
 
-You can reach our support team at:
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 24px;
+      margin-bottom: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(15, 14, 34, 0.12);
+    }
 
-- **Email:** insane.products.studio@gmail.com
+    h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
 
-When you write to us, please include (if possible):
+    .subtitle {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #5a5872;
+    }
 
-- a short description of the issue,
-- screenshots (if relevant),
-- your device model and iOS version,
-- the version of the SoulCue AI app you’re using.
+    h2 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
 
-We aim to respond to most requests within **48 hours** on business days.
+    p {
+      line-height: 1.55;
+      font-size: 0.98rem;
+      margin: 8px 0;
+    }
 
----
+    ul {
+      padding-left: 20px;
+      margin: 6px 0 14px;
+      line-height: 1.5;
+      font-size: 0.96rem;
+    }
 
-## Common things we can help with
+    .card {
+      background: var(--accent-soft);
+      border-radius: 14px;
+      padding: 12px 14px;
+      border: 1px solid rgba(122, 92, 255, 0.18);
+      font-size: 0.93rem;
+      margin-top: 10px;
+    }
 
-- Problems with **sign-in or account access**
-- Issues with **subscriptions or payments**
-- Questions about **how to use AI coaches and trainings**
-- Requests to **delete your account or data**
-- Suggestions and feedback about new features
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
----
+    a:hover {
+      text-decoration: underline;
+    }
 
-## Data & privacy
+    .footer {
+      margin-top: 28px;
+      font-size: 0.9rem;
+      color: #7a7893;
+      text-align: center;
+    }
 
-For detailed information on how we collect, use, and protect your data, please see our:
+    @media (min-width: 768px) {
+      .container {
+        padding: 32px 32px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <header>
+        <!-- подставь реальный путь к лого -->
+        <img
+          src="PATH_TO_YOUR_LOGO.png"
+          alt="SoulCue AI logo"
+          class="logo"
+        />
+        <h1>SoulCue AI – Support &amp; Contact</h1>
+        <p class="subtitle">
+          If something feels off in the app – or in a conversation – we’re here to help.
+        </p>
+      </header>
 
-👉 **[Privacy Policy](https://insane-products-studio.github.io/soulcureai-legal/privacy.html)**
+      <section>
+        <h2>How to contact support</h2>
+        <p>
+          You can reach our support team at:
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:support@soulcue.app">support@soulcue.app</a>
+        </p>
+        <p>
+          To help us debug faster, please include (if possible):
+        </p>
+        <ul>
+          <li>a short description of the issue,</li>
+          <li>screenshots (if relevant),</li>
+          <li>your device model and iOS version,</li>
+          <li>the version of the SoulCue AI app you’re using.</li>
+        </ul>
 
----
+        <div class="card">
+          We aim to respond to most requests within
+          <strong>48 hours</strong> on business days.
+        </div>
+      </section>
 
-Thank you for using **SoulCue AI** 💛
+      <section>
+        <h2>What we can help with</h2>
+        <ul>
+          <li>Problems with sign-in or account access</li>
+          <li>Issues with subscriptions or payments</li>
+          <li>Questions about using AI coaches and trainings</li>
+          <li>Requests to delete your account or data</li>
+          <li>Ideas and feedback about new features</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Data &amp; privacy</h2>
+        <p>
+          For detailed information on how we collect, use, and protect your data,
+          please see our
+          <a href="https://insane-products-studio.github.io/soulcureai-legal/privacy.html">
+            Privacy Policy
+          </a>.
+        </p>
+      </section>
+
+      <p class="footer">
+        Thank you for using <strong>SoulCue AI</strong> 💛
+      </p>
+    </div>
+  </main>
+</body>
+</html>
