@@ -1,124 +1,435 @@
-<!-- Лого приложения -->
-<p align="center">
-  <img src="logo.png" alt="SoulCue AI logo" width="128" />
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SoulCue AI – AI Relationship Coach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="SoulCue AI is an AI-powered relationship coach that helps you process conflicts, understand patterns, and practice healthier messages before you send them."
+  />
+  <style>
+    :root {
+      --bg: radial-gradient(circle at top, #f5f0ff 0, #f7f5fb 40%, #f8fafc 100%);
+      --card-bg: #ffffff;
+      --text: #171624;
+      --muted: #5c5a73;
+      --accent: #7a5cff;
+      --accent-soft: rgba(122, 92, 255, 0.08);
+      --border: #e2deef;
+    }
 
-<h1 align="center">SoulCue AI</h1>
-<h3 align="center">Your AI-powered relationship coach in your pocket</h3>
+    * {
+      box-sizing: border-box;
+    }
 
-<p align="center">
-  Reflect on your relationships, process conflicts, and practice healthier messages – all in a private, supportive space.
-</p>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
 
----
+    .page {
+      min-height: 100vh;
+      padding: 32px 16px 40px;
+      display: flex;
+      justify-content: center;
+    }
 
-## What is SoulCue AI?
+    .container {
+      width: 100%;
+      max-width: 960px;
+    }
 
-**SoulCue AI** is a chat-based relationship coach that helps you:
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
 
-- unpack difficult conversations,
-- understand why you keep repeating the same patterns,
-- rehearse messages before sending them,
-- build calmer, clearer, kinder communication habits.
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 26px;
+      object-fit: cover;
+      box-shadow: 0 18px 40px rgba(15, 14, 34, 0.16);
+      margin-bottom: 14px;
+    }
 
-Instead of doom-scrolling or overthinking alone, you can open SoulCue AI and talk it through.
+    .app-name {
+      font-size: 2.1rem;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
 
----
+    .tagline {
+      margin: 6px 0 10px;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
 
-## What you can do in the app
+    .subtagline {
+      margin: 0;
+      font-size: 0.96rem;
+      color: var(--muted);
+    }
 
-### 🧠 Chat with AI coaches
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
 
-Different AI coaches focus on different themes, for example:
+    .hero-main,
+    .hero-side {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 16px 40px rgba(15, 14, 34, 0.06);
+      padding: 20px 18px 22px;
+    }
 
-- conflict after arguments,
-- boundaries and saying “no” without guilt,
-- anxiety while waiting for a reply,
-- self-sabotage and choosing unavailable partners.
+    .hero-main h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
 
-Each coach has their own tone and style, but all of them are here to help you slow down, reflect, and respond more intentionally.
+    .hero-main p {
+      margin: 8px 0;
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
 
----
+    .hero-list {
+      padding-left: 20px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-size: 0.97rem;
+      line-height: 1.6;
+    }
 
-### 💬 Practice texting before you send
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
 
-Not sure how to reply?
+    .hero-side h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+    }
 
-- paste the message you want to send,
-- describe the situation,
-- ask SoulCue AI to help you draft a calm, honest response.
+    .hero-side p {
+      margin: 8px 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
 
-You can see several options, adjust the wording, and choose what feels most like you.
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
 
----
+    .chip {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(122, 92, 255, 0.25);
+      background: #f7f4ff;
+      color: #433499;
+    }
 
-### 🎯 Guided trainings & scenarios
+    h2.section-title {
+      margin-top: 32px;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
 
-SoulCue AI includes **training scenarios** that feel like realistic chats:
+    .section-text {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-top: 0;
+      margin-bottom: 14px;
+      max-width: 720px;
+    }
 
-- “Texting after conflict”
-- “Saying no without guilt”
-- “Waiting for reply anxiety”
-- “Breaking old patterns”
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
 
-Each training walks you through a short, structured conversation:
-you see example messages, choose your response, and get gentle feedback along the way.
+    .card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      padding: 16px 16px 18px;
+      box-shadow: 0 10px 28px rgba(15, 14, 34, 0.04);
+    }
 
----
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
 
-### 🔍 Insights & patterns over time
+    .card p {
+      margin: 6px 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-As you use the app, SoulCue AI can highlight:
+    .card ul {
+      margin: 6px 0 0;
+      padding-left: 20px;
+      font-size: 0.94rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
 
-- recurring patterns in your stories and messages,
-- triggers that lead to conflict or anxiety,
-- moments where you successfully chose a healthier response.
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-The goal is not to judge you, but to help you notice:  
-**“this is where I usually choose chaos – and this time I didn’t.”**
+    a:hover {
+      text-decoration: underline;
+    }
 
----
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
 
-## Who SoulCue AI is for
+    @media (min-width: 768px) {
+      .page {
+        padding: 40px 24px 48px;
+      }
+      header {
+        margin-bottom: 40px;
+      }
+      .hero {
+        grid-template-columns: 1.4fr 1fr;
+      }
+      .hero-main,
+      .hero-side {
+        padding: 24px 22px 24px;
+      }
+      .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="container">
+      <header>
+        <!-- подставь реальный путь к лого -->
+        <img
+          src="logo.png"
+          alt="SoulCue AI logo"
+          class="logo"
+        />
+        <h1 class="app-name">SoulCue AI</h1>
+        <p class="tagline">Your AI-powered relationship coach in your pocket.</p>
+        <p class="subtagline">
+          Process conflicts, understand patterns, and practice healthier messages – in a private, supportive space.
+        </p>
+      </header>
 
-SoulCue AI can be helpful if you:
+      <section class="hero">
+        <article class="hero-main">
+          <div class="pill">For the “I wish I’d said that differently” moments</div>
+          <h2>Talk it through before you text it out.</h2>
+          <p>
+            SoulCue AI is a chat-based relationship coach. Instead of doom-scrolling
+            or overthinking alone, you can:
+          </p>
+          <ul class="hero-list">
+            <li>unpack what actually happened in a tough conversation,</li>
+            <li>see patterns you keep repeating in relationships,</li>
+            <li>rehearse messages before you send them,</li>
+            <li>build calmer, clearer, kinder communication habits.</li>
+          </ul>
+          <p>
+            You bring the real-life story. SoulCue AI helps you pause, reflect,
+            and choose a response that feels more like the version of you
+            you’re trying to become.
+          </p>
+        </article>
 
-- keep ending up in similar, painful relationship dynamics,
-- replay conversations in your head and think “I should’ve said it differently”,
-- struggle to set boundaries and feel guilty when you try,
-- feel anxious when someone doesn’t text back,
-- want to communicate more clearly and kindly – with others and with yourself.
+        <aside class="hero-side">
+          <h3>Built for real relationship anxiety</h3>
+          <p>
+            SoulCue AI is especially helpful if you:
+          </p>
+          <div class="chip-row">
+            <span class="chip">text after conflict</span>
+            <span class="chip">waiting for reply anxiety</span>
+            <span class="chip">saying “no” without guilt</span>
+            <span class="chip">toxic / unavailable partners</span>
+            <span class="chip">self-sabotage in dating</span>
+          </div>
+          <p style="margin-top: 12px;">
+            It’s not therapy – but it is a structured space to slow down,
+            see your patterns, and practice new ways of responding.
+          </p>
+        </aside>
+      </section>
 
-You don’t need to be in a “perfect” relationship to start doing this work.
-SoulCue AI is here for the messy, very human middle.
+      <section>
+        <h2 class="section-title">What you can do in SoulCue AI</h2>
+        <p class="section-text">
+          The app combines AI coaches, realistic texting scenarios, and gentle
+          reflections so you can work on communication in small, doable steps.
+        </p>
 
----
+        <div class="cards-grid">
+          <div class="card">
+            <h3>🧠 Chat with AI coaches</h3>
+            <p>
+              Different AI coaches focus on different themes, for example:
+            </p>
+            <ul>
+              <li>after-argument repair and de-escalation,</li>
+              <li>boundaries and “no” without guilt,</li>
+              <li>choosing partners who can actually show up,</li>
+              <li>spotting self-sabotage in your texts.</li>
+            </ul>
+          </div>
 
-## Privacy & data
+          <div class="card">
+            <h3>💬 Practice messages before you send</h3>
+            <p>
+              Not sure how to reply? Paste the screenshot or paraphrase the chat,
+              and ask SoulCue AI to help you draft a response.
+            </p>
+            <p>
+              Explore several options, tweak the tone, and choose the one that
+              feels most like you – before it lands in someone else’s inbox.
+            </p>
+          </div>
 
-We know your conversations are sensitive. That’s why we:
+          <div class="card">
+            <h3>🎯 Guided scenarios & trainings</h3>
+            <p>
+              Short, realistic texting scenarios walk you through situations like:
+            </p>
+            <ul>
+              <li>“Texting after conflict”</li>
+              <li>“Saying no without guilt”</li>
+              <li>“Waiting for reply anxiety”</li>
+              <li>“Breaking old patterns”</li>
+            </ul>
+            <p>
+              You choose replies, see example messages, and get gentle
+              explanations along the way.
+            </p>
+          </div>
+        </div>
+      </section>
 
-- clearly explain what data we collect and why,
-- use reputable infrastructure providers for storage and AI processing,
-- never sell your personal data,
-- give you a way to request deletion of your account and data.
+      <section>
+        <h2 class="section-title">Who SoulCue AI is for</h2>
+        <p class="section-text">
+          SoulCue AI can be a good fit if you:
+        </p>
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Patterns & “types”</h3>
+            <p>
+              You notice that you keep ending up in similar dynamics – chasing,
+              overgiving, choosing emotionally unavailable people, or
+              sabotaging things when they finally feel safe.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Overthinking & replaying</h3>
+            <p>
+              You replay conversations in your head, imagine hundreds of
+              versions of the same text, and often feel “I should’ve said that
+              differently”.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Boundaries & guilt</h3>
+            <p>
+              Saying “no” feels scary or selfish. You want to protect your time
+              and energy without blowing things up or ghosting people.
+            </p>
+          </div>
+        </div>
+      </section>
 
-You can read the full details in our  
-👉 **[Privacy Policy](https://insane-products-studio.github.io/soulcureai-legal/privacy.html)**
+      <section>
+        <h2 class="section-title">Privacy & data</h2>
+        <p class="section-text">
+          We know your conversations are sensitive. That’s why we:
+        </p>
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Respect your privacy</h3>
+            <p>
+              We clearly explain what data we collect and why. We don’t sell
+              your personal data, and we only use it to provide and improve the app.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Use reputable infrastructure</h3>
+            <p>
+              We rely on established providers for storage, analytics, and AI,
+              and we follow platform rules for third-party AI processing.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Your rights</h3>
+            <p>
+              You can request deletion of your account and data, and we’re
+              working to make more controls available directly inside the app.
+            </p>
+          </div>
+        </div>
+        <p class="section-text">
+          You can read the full details in our
+          <a href="https://insane-products-studio.github.io/soulcureai-legal/privacy.html">
+            Privacy Policy
+          </a>.
+        </p>
+      </section>
 
----
+      <section>
+        <h2 class="section-title">Support</h2>
+        <p class="section-text">
+          Run into an issue or want to share feedback?
+        </p>
+        <p class="section-text">
+          Visit our
+          <a href="https://insane-products-studio.github.io/soulcureai-legal/support.html">
+            Support &amp; Contact
+          </a>
+          page or email us at
+          <a href="mailto:support@soulcue.app">support@soulcue.app</a>.
+        </p>
+      </section>
 
-## Support
-
-Run into an issue or want to share feedback?
-
-- Visit our **[Support & Contact](https://insane-products-studio.github.io/soulcureai-legal/support.html)** page  
-- Or email us at **support@soulcue.app**
-
-We’d love to hear what you’d like to see in SoulCue AI next.
-
----
-
-<p align="center">
-  <em>SoulCue AI – helping you pause, notice patterns, and choose better conversations.</em>
-</p>
+      <p class="footer">
+        <em>SoulCue AI – helping you pause, notice patterns, and choose better conversations.</em>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
